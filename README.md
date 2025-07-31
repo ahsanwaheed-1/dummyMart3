@@ -1,2 +1,2 @@
 # dummyMart3
-# Inventra
+# Storenta
