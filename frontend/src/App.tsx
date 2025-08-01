@@ -10,7 +10,7 @@ function App() {
   return (
     <ProductProvider>
       <Router>
-        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="bg-yellow-200 min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />

@@ -6,13 +6,13 @@ const Header: React.FC = () => {
   const location = useLocation();
 
   return (
-    <header className="bg-white shadow-sm border-b border-gray-200">
+    <header className="bg-yellow-400 shadow-sm border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center space-x-2">
             <ShoppingBag className="h-8 w-8 text-blue-600" />
             <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              ProductStore
+              Storenta
             </span>
           </Link>
           

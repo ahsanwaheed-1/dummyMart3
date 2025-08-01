@@ -36,7 +36,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
+    <div className="bg-yellow-100 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group">
       <div className="relative overflow-hidden">
         <img
           src={product.imageUrl}
@@ -44,7 +44,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
         />
         <div className="absolute top-3 right-3">
-          <span className="bg-blue-600 text-white px-2 py-1 rounded-full text-xs font-medium">
+          <span className="bg-yellow-600 text-white px-2 py-1 rounded-full text-xs font-medium">
             {product.category}
           </span>
         </div>

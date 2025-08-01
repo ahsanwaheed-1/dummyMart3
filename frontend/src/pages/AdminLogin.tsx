@@ -17,7 +17,7 @@ const AdminLogin: React.FC = () => {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
+      const response = await axios.post('https://storenta.onrender.com/api/auth/login', {
         username,
         password
       });
@@ -36,7 +36,7 @@ const AdminLogin: React.FC = () => {
   return (
     <div className="min-h-[calc(100vh-4rem)] flex items-center justify-center px-4">
       <div className="max-w-md w-full">
-        <div className="bg-white rounded-2xl shadow-xl p-8">
+        <div className="bg-yellow-300 rounded-2xl shadow-xl p-8">
           <div className="text-center mb-8">
             <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
               <Lock className="h-8 w-8 text-blue-600" />
