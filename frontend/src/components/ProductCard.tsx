@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Star, MessageCircle } from 'lucide-react';
 
 interface Product {
@@ -22,6 +23,7 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  const navigate = useNavigate();
   const renderStars = (rating: number) => {
     return [...Array(5)].map((_, index) => (
       <Star
@@ -33,6 +35,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         }`}
       />
     ));
+  };
+
+  const handleViewDetails = () => {
+    // convert product name into URL-friendly string
+    const productName = product.name.toLowerCase().replace(/\s+/g, '-');
+    navigate(`/product/${productName}`);
   };
 
   return (
@@ -78,7 +86,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               {product.reviews.length} review{product.reviews.length !== 1 ? 's' : ''}
             </span>
           </div>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+          <button onClick={handleViewDetails} className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
             View Details
           </button>
         </div>

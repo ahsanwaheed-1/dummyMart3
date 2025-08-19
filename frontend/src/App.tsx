@@ -4,6 +4,7 @@ import { ProductProvider } from './context/ProductContext';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Admin from './pages/Admin';
+import ProductDetail from './pages/ProductDetail';
 import AdminLogin from './pages/AdminLogin';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/product/:name" element={<ProductDetail />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/admin/login" element={<AdminLogin />} />
           </Routes>
