@@ -25,6 +25,10 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/location', (req, res) => {
+  res.json({ location: 'Model Town Lahore' });
+});
+
 // Get product by ID
 router.get('/:id', async (req, res) => {
   try {
