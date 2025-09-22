@@ -3,8 +3,7 @@ import Product from '../models/Product.js';
 
 const router = express.Router();
 
-// Get all products
-// Get all products or search by name
+// Get all products OR search by one/multiple names
 router.get('/', async (req, res) => {
   const searchQuery = req.query.q;
 
@@ -12,8 +11,12 @@ router.get('/', async (req, res) => {
     let products;
 
     if (searchQuery) {
+      // Split comma-separated search terms
+      const searchTerms = searchQuery.split(',').map(term => term.trim());
+
+      // Case-insensitive search for any term
       products = await Product.find({
-        name: { $regex: searchQuery, $options: 'i' }, // case-insensitive search
+        name: { $regex: searchTerms.join('|'), $options: 'i' }
       }).sort({ createdAt: -1 });
     } else {
       products = await Product.find().sort({ createdAt: -1 });
